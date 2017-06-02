@@ -16,9 +16,29 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'function' => $faker->jobTitle,
+        'tel_fix' => $faker->phoneNumber,
+        'tel_portable' => $faker->e164PhoneNumber,
     ];
+});
+
+$factory->define(App\Client::class,function (Faker\Generator $faker){
+    return [
+        'id_mercure' => $faker->unique()->numberBetween(100,555555555),
+        'siret' => str_random(10),
+        'raison_sociale' => $faker->company,
+        'enseigne' => $faker->company,
+        'adress_1' => $faker->streetAddress,
+        'adress_2' => $faker->streetName,
+        'adress_3' => $faker->streetSuffix,
+        'ville' => $faker->city,
+        'id_ref_tiers' => $faker->unique()->numberBetween(100,555555555),
+
+    ];
+
 });
