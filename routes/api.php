@@ -18,3 +18,5 @@ use Illuminate\Http\Request;
 //});
 Route::resource('user','UserController');
 Route::resource('client','ClientController');
+
+Route::get('search','SearchController@ClientUserSearch');

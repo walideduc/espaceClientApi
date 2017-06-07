@@ -16,12 +16,12 @@ return [
     */
 
     //'driver' => env('SCOUT_DRIVER', 'algolia'),
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => env('SCOUT_DRIVER', 'elasticsearch'),
 
     'elasticsearch' => [
-        'index' => env('ELASTICSEARCH_INDEX', 'laravel'),
+        'index' => env('ELASTICSEARCH_INDEX', 'app'),
         'hosts' => [
-            env('ELASTICSEARCH_HOST', 'http://localhost'),
+            env('ELASTICSEARCH_HOST', 'http://localhost:9200'),
         ],
     ],
 
