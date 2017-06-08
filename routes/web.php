@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin!Xl25W/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+

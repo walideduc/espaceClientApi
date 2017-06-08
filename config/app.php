@@ -181,6 +181,11 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
         App\Providers\ElasticsearchServiceProvider::class,
+
+        Barryvdh\Cors\ServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
+
     ],
 
     /*
