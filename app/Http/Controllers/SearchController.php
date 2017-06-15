@@ -27,7 +27,7 @@ class SearchController extends Controller
         if(!empty($query)){
             $params = [
                 'index' => 'app',
-                //'type' => 'users',
+                'type' => ['users','clients'],
                 'body' => [
                     'query' => [
                         'bool' => [
@@ -41,7 +41,8 @@ class SearchController extends Controller
                                                 'ville',
                                                 'raison_sociale',
                                                 'adress_2'
-                                            ]
+                                            ],
+                                            'fuzziness' => 'AUTO'
                                         ]
                                 ],
                                 [
@@ -53,7 +54,8 @@ class SearchController extends Controller
                                                 'function',
                                                 'email',
                                                 'last_name'
-                                            ]
+                                            ],
+                                            'fuzziness' => 'AUTO'
                                         ]
                                 ],
                             ]
