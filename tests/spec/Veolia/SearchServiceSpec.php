@@ -12,4 +12,10 @@ class SearchServiceSpec extends ObjectBehavior
     {
         $this->shouldHaveType(SearchService::class);
     }
+
+    function it_returns_clinet_user_serach_result()
+    {
+        $query = "orange";
+        $this->clientUserSearch($query)->shouldHaveKey('data');
+    }
 }
