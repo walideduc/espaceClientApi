@@ -13,9 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+Route::middleware('auth:api')->get('/connected_user', function (Request $request) {
+    return $request->user();
+});
+
+Route::middleware('oauthclient')->get('/connected_oautclient', function (Request $request) {
+    return $request->offsetGet('passportClient');
+});
+
+
 Route::resource('user','UserController');
 Route::resource('client','ClientController');
 

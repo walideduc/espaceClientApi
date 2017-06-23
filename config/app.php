@@ -185,6 +185,9 @@ return [
         Barryvdh\Cors\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
+        Laravel\Passport\PassportServiceProvider::class,
+
+
 
     ],
 
